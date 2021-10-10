@@ -8,8 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 <style>
 body {
-    font-family: 'Roboto';font-size: 22px;
-    margin: 10px;
+    font-family: 'Roboto';font-size: 15px;
 }
 
 
@@ -35,20 +34,27 @@ body {
 
 .right:hover {
 
-  transform: scale(1.5)translateY(-10px);
+  transform: scale(1.5);
 }
 
 .left:hover {
 
-transform: scale(1.5)translate(200px,-10px);
+transform: scale(1.5)translateX(100px);
+}
+
+.rightbottom:hover {
+
+transform: scale(1.5)translateY(-100px);
+}
+
+.leftbottom:hover {
+
+transform: scale(1.5)translate(100px, -100px);
 }
 
 </style>
 </head>
 <body>
-    <div>
-        <h3>Digital Label Dashboard</h3>
-    </div>
     <div>
         <div class="author">
             <div>
@@ -79,11 +85,11 @@ transform: scale(1.5)translate(200px,-10px);
     </div>
 </div>
 <div class="design">
-    <div class="zoom left">
+    <div class="zoom leftbottom">
         <div class="header">New Design Template</div>
         <img src="design/design.png" alt="" width="500"/>
     </div>
-    <div class="zoom right">
+    <div class="zoom rightbottom">
         <div class="header">New Design</div>
         <img src="design/final_with_sectioning.png" alt="" width="500"/>
     </div>
