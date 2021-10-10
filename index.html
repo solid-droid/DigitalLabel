@@ -5,8 +5,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Label Dashboard</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+<style>
+body {
+    font-family: 'Roboto';font-size: 22px;
+    margin: 10px;
+}
+
+
+.author{
+    display: grid;
+    grid-template-columns: 200px 300px;
+}
+.design{
+    display: grid;
+    grid-template-columns: 49vw 49vw;
+}
+
+.zoom {
+  transition: transform .2s; /* Animation */
+}
+
+.header{
+    background-color: rgb(233, 184, 184);
+    display: flex;
+    width: fit-content;
+}
+
+.right:hover {
+
+  transform: scale(1.5)translateY(-10px);
+}
+
+.left:hover {
+
+transform: scale(1.5)translate(200px,-10px);
+}
+
+</style>
 </head>
 <body>
-    Hi there.
+    <div>
+        <h3>Digital Label Dashboard</h3>
+    </div>
+    <div>
+        <div class="author">
+            <div>
+                Author / Designer
+            </div>
+            <div>
+               : Nikhil M Jeby
+            </div>
+        </div>
+        <div class="author">
+            <div>
+                Email
+            </div>
+            <div>
+               : nikhil.m.jeby@gmail.com
+            </div>
+        </div>
+    </div>
+<br><br>
+<div class="design">
+    <div class="zoom left">
+        <div class="header">Existing Design</div>
+        <img src="design/Capture.png" alt="" width="500"/>
+    </div>
+    <div class="zoom right">
+        <div class="header">New Design</div>
+        <img src="design/final.png" alt="" width="500"/>
+    </div>
+</div>
+<div class="design">
+    <div class="zoom left">
+        <div class="header">New Design Template</div>
+        <img src="design/design.png" alt="" width="500"/>
+    </div>
+    <div class="zoom right">
+        <div class="header">New Design</div>
+        <img src="design/final_with_sectioning.png" alt="" width="500"/>
+    </div>
+</div>
+
 </body>
 </html>
