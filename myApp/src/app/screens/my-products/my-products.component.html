@@ -1,0 +1,54 @@
+<div class="container disable-select">
+    <div *ngFor="let item of productList" class="card">
+        <div class="topPartMobile">
+            <div class ="productImg">
+                <img src = "{{item.image}}">
+            </div>
+            <div class="productInfo">
+                <div class= "header">
+                    <div class="left">
+                        <div class='name'>{{item.name}}</div>
+                    </div>
+                    <div class="right">
+                        <div class='check' *ngIf="item.verified"><i class="fas fa-check-circle"></i></div>
+                        <div class="verified" *ngIf="item.verified">Verified</div>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="left desktop">
+                        <div class="descrip">{{item.description}}</div>
+                    </div>
+                    <div class="right">
+                        <div class="expiry">
+                            <div>Expiry</div>
+                            <div class="value">: {{item.expiry}}</div>
+                        </div>
+                        <div class="quantity">
+                            <div>Available</div>
+                            <div  class="value">: {{item.quantity}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="desktop footer">
+                    <div class="moreInfo">More Info</div>
+                    <div class="BuyMore">Buy More</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer mobile">
+            <div class="moreInfo">More Info</div>
+            <div class="BuyMore">Buy More</div>
+        </div>
+</div>
+
+<div class="success" *ngIf="showSuccess">
+    <div class="popupContainer">
+        <div class="suc_head">
+            <i class="fas fa-check-circle icon"></i>
+            <div>Product Verified</div>
+        </div>
+        <div class="suc_body">
+            <div>This is a genuine Bayers product</div>
+        </div>
+    </div>
+</div>

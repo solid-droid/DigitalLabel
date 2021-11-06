@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    justify-content: right;
+    padding: 10px;
+    padding-right: 20px;
+    grid-gap:10px;
+    align-items: center;
+    .name{
+        color: rgb(230, 230, 230);
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .pic{
+        width:50px;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .container{
+        padding-right: 15px;
+    }
+
+}

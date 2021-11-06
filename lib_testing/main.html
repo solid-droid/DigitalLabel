@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>basic example</title>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+
+<script type="text/javascript" src="./lib/jquery.qrcode.js"></script>
+<script type="text/javascript" src="./lib/qrcode.js"></script>
+<script type="text/javascript" src="./lib/qr-scanner.umd.min.js"></script>
+<script type="text/javascript" src="./lib/qr-scanner-worker.min.js"></script>
+
+<div id="qrcodeCanvas"></div>
+<video id ="videoElem"></video>
+
+<script>
+
+	jQuery('#qrcodeCanvas').qrcode({
+		text	: "nikhil"
+	});	
+    const videoElem = document.getElementById('videoElem');
+    const qrScanner = new QrScanner(videoElem, result => console.log('decoded qr code:', result));
+    QrScanner.listCameras(true);
+    qrScanner.start();
+    qrScanner.turnFlashOn()
+</script>
+
+</body>
+</html>

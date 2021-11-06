@@ -1,0 +1,28 @@
+
+<div class="scanButton" (click)="scanQRcode()">
+    <i class="fas fa-qrcode scanIcon"></i>
+</div>
+<div class="tab-Container">
+        <ul class="Tabs">
+            <li class="Tabs__tab Tab _Help">Help</li>
+            <li class="Tabs__tab active Tab _Products">Products</li>
+            <li class="Tabs__tab Tab _Store">Store</li>
+            <li class="Tabs__presentation-slider" role="presentation"></li>
+        </ul>
+</div>
+
+
+<div class="container">
+    <div class="swiper-container">
+        <!-- Add Pagination -->
+        <div class="swiper-pagination">
+        </div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><app-chat-room></app-chat-room></div>
+            <div class="swiper-slide"><app-my-products></app-my-products></div>
+            <div class="swiper-slide"><app-product-store></app-product-store></div>
+        </div>
+    </div>
+</div>
+
+

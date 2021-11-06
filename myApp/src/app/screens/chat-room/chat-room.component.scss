@@ -1,0 +1,23 @@
+.Maincontainer{
+    height: 100%;
+    padding-top: 20px;
+}
+
+section#demo {
+    position: relative;
+    padding: 0;
+    min-height:70%;
+}
+.vertical-align {
+	position: fixed;
+	bottom:0;
+	width: 100%;
+}
+.card {
+	background: rgba(10, 124, 255, 0);
+    padding: 7px 15px;
+}
+
+.conv-form-wrapper::before{
+    background: none;
+}
