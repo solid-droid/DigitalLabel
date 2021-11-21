@@ -44,7 +44,12 @@
               "src/assets/swiper-bundle.min.js",
               "src/assets/rivescript.min.js",
               "src/assets/autosize.min.js",
-              "src/assets/jquery.convform.js"
+              "src/assets/jquery.convform.js",
+              "src/assets/hereMaps/mapsjs-core.js",
+              "src/assets/hereMaps/mapsjs-mapevents.js",
+              "src/assets/hereMaps/mapsjs-service.js",
+              "src/assets/hereMaps/mapsjs-ui.js"
+              
             ]
           },
           "configurations": {

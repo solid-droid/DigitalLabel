@@ -30,13 +30,13 @@
                     </div>
                 </div>
                 <div class="desktop footer">
-                    <div class="moreInfo">More Info</div>
+                    <div class="moreInfo" (click)="showMore=true;selectedProduct=item;">More Info</div>
                     <div class="BuyMore">Buy More</div>
                 </div>
             </div>
         </div>
         <div class="footer mobile">
-            <div class="moreInfo">More Info</div>
+            <div class="moreInfo" (click)="showMore=true;selectedProduct=item;">More Info</div>
             <div class="BuyMore">Buy More</div>
         </div>
 </div>
@@ -51,4 +51,36 @@
             <div>This is a genuine Bayers product</div>
         </div>
     </div>
+</div>
+
+<div class="fail" *ngIf="showFail">
+    <div class="popupContainer">
+        <div class="suc_head">
+            <i class="fas fa-times-circle icon"></i>
+            <div>Product Not Verified</div>
+        </div>
+        <div class="suc_body">
+            <div>This is not a genuine Bayers product</div>
+        </div>
+    </div>
+</div>
+
+<div class="oldCode" *ngIf="oldCode">
+    <div class="popupContainer">
+        <div class="suc_head">
+            <i class="fas fa-times-circle icon"></i>
+            <div>Product Verified</div>
+        </div>
+        <div class="suc_body">
+            <div>This product is already registered</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="MoreInfoPopup" *ngIf="showMore" (click)="showMore=false;">
+    <div class="popupContainer">
+        {{selectedProduct.description}}
+    </div>
+
 </div>

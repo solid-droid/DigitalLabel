@@ -3,7 +3,7 @@
         <div>
             QR Code Scanner
         </div>
-        <div (click)="disableScanner()"> 
+        <div (click)="disableScanner()" *ngIf="type=='user'"> 
             <i class="fas fa-times-circle"></i>    
         </div>
 

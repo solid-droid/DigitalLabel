@@ -1,1 +1,21 @@
-<p>product-store works!</p>
+<div class="container">
+    <div class="banner">
+       OFFERS | NEW ARRIVALS
+    </div>
+    <div class="storeContent" >
+        <div class="item" *ngFor="let item of productList">
+            <div class="itemName">
+                {{item.name}}
+            </div>
+            <div class ="productImg">
+                <img src = "{{item.image}}">
+            </div>
+            <div class="buyButton">
+                <div class="button">
+                    Buy
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

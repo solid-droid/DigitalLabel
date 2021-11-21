@@ -7,13 +7,26 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class MainServicesService {
 
+  lat;
+  long;
   private readonly Observable_QRvalue = new BehaviorSubject(undefined);
   getQRvalue = this.Observable_QRvalue.asObservable();
 
-  constructor() { }
+  constructor() {
+    this.getLocation();
+   }
 
   setQRvalue(value:string) {
     this.Observable_QRvalue.next(value);
+  }
+
+  getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(pos => {
+        this.lat = pos.coords.latitude;
+        this.long = pos.coords.longitude; 
+      });
+    }
   }
 
 }

@@ -8,9 +8,9 @@
     padding: 20px;
     padding-bottom: 25px;
     border-radius: 20px;
-    background: #048fd0;
-    box-shadow: #52b0fdba -1px 1px 12px 4px, 
-                #52aafdad 3px 3px 6px 0px;
+    background: #1a7caa;
+    box-shadow: #499ce1ba -1px 1px 12px 4px,
+                #418bd2ad 3px 3px 6px 0px;
 }
 
 .topPartMobile{
@@ -89,14 +89,18 @@
     div{
         cursor: pointer;
         border-radius: 20px;
-        box-shadow: #52b0fdba -1px 1px 5px 4px, 
-                    #52aafdad 1px -1px 5px 0px;
+        box-shadow: #468cc5ba -1px 1px 5px 4px, 
+                    #6099cead 1px -1px 5px 0px;
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 20px;
         font-size: 20px;
         width: 150px;
+        transition: 0.3s;
+        &:hover{
+            background: #4d83b6;
+        }
     }
 }
 
@@ -118,6 +122,107 @@
 }
 
 
+.MoreInfoPopup{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 90%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .popupContainer{
+        height: 90%;
+        color: black;
+        width: 90%;
+        background: #cbece7;
+        padding: 16px;
+        font-size: 20px;
+        border-radius: 30px;
+        box-shadow: #91bee9e0 -3px -3px 8px 2px, #81c1ebe1 3px 3px 8px 2px;
+    }
+}
+
+.oldCode{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 90%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .popupContainer{
+        height: 50%;
+        width: 550px;
+        background: rgb(216, 219, 176);
+        color: black;
+        border-radius: 30px;
+        box-shadow: #91bee9e0 -3px -3px 8px 2px, #81c1ebe1 3px 3px 8px 2px;
+        .suc_head{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30%;
+            padding-top: 50px;
+            font-size: 50px;
+            .icon{
+                color: rgb(201, 22, 22);
+            }
+            div{
+                padding-left: 20px;
+            }
+        }
+        .suc_body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            padding: 20px;
+        }
+    }
+}
+
+.fail{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 90%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .popupContainer{
+        height: 50%;
+        width: 550px;
+        background: rgb(219, 176, 176);
+        color: black;
+        border-radius: 30px;
+        box-shadow: #91bee9e0 -3px -3px 8px 2px, #81c1ebe1 3px 3px 8px 2px;
+        .suc_head{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30%;
+            padding-top: 50px;
+            font-size: 50px;
+            .icon{
+                color: rgb(201, 22, 22);
+            }
+            div{
+                padding-left: 20px;
+            }
+        }
+        .suc_body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            padding: 20px;
+        }
+    }
+}
+
 .success{
     position: fixed;
     width: 100%;
@@ -133,7 +238,7 @@
         background: rgb(4, 214, 186);
         color: black;
         border-radius: 30px;
-        box-shadow: #52a6fdba -6px -6px 14px 3px, #52a6fdba 6px 6px 12px 1px;
+        box-shadow: #91bee9e0 -3px -3px 8px 2px, #81c1ebe1 3px 3px 8px 2px;
         .suc_head{
             display: flex;
             justify-content: center;
@@ -172,7 +277,7 @@
         grid-gap:10px
     }
 
-    .success{
+    .success, .fail, .oldCode{
         .popupContainer{
             height: 35%;
             width: 90%;
@@ -190,6 +295,12 @@
                 font-size: 17px;
                 padding: 20px;
             }
+        }
+    }
+
+    .fail{
+        .suc_head{
+            font-size: 30px !important;
         }
     }
 

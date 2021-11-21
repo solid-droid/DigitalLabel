@@ -19,6 +19,7 @@ export class UserUIComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
 
     const tabList = ['Help', 'Products', 'Store']
+    const tabValue = ['Help', 'Home', 'Store']
     const tabs = document.getElementsByClassName('Tab');
 
     this.swiper = new Swiper('.swiper-container', {
@@ -34,7 +35,7 @@ export class UserUIComponent implements OnInit, OnDestroy {
     });
 
     Array.prototype.forEach.call(tabs, tab => tab.addEventListener('click', e =>{
-          this.swiper.slideTo(tabList.findIndex(x => x == e.target.innerText));
+          this.swiper.slideTo(tabList.findIndex((x,i) => tabValue[i] == e.target.innerText));
           Array.prototype.forEach.call(tabs, tab =>	tab.classList.remove('active'));
           e.currentTarget.classList.add('active');
     }));

@@ -1,0 +1,23 @@
+.container{
+    padding-top: 23px;
+    font-size: 46px;
+}
+#map{
+    position: absolute;
+    width: 98%;
+    height: 98%;
+    left: 5px;
+    top: 65px;
+    background: grey;
+    z-index: 1;
+}
+
+@media screen and (max-width: 600px) {
+    .container{
+        margin-top: -40px;
+        padding-left: 10px;
+    }
+    #map{
+        top: 40px;
+    }
+}

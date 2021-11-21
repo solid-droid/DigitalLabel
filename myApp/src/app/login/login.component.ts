@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private readonly router: Router,
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  bayers()
+  {
+    this.router.navigate(['employee']);
+  }
+
+  supplier(){
+    this.router.navigate(['supplier']);
+  }
+
+  customer(){
+    this.router.navigate(['user']);
+  }
+
+  analytics(){
+    this.router.navigate(['analytics']);
   }
 
 }

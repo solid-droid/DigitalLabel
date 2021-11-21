@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MainServicesService } from 'src/app/services/main-services.service';
 
@@ -8,6 +8,8 @@ import { MainServicesService } from 'src/app/services/main-services.service';
   styleUrls: ['./qr-scanner.component.scss']
 })
 export class QrScannerComponent implements OnInit {
+
+  @Input() type= 'user';
 
   scannerEnabled = false;
   torch = false;
@@ -34,8 +36,6 @@ export class QrScannerComponent implements OnInit {
   async disableScanner() {
     await new Promise(resolve => setTimeout(resolve, 500));
     this.scannerEnabled = false;
-    await new Promise(resolve => setTimeout(resolve, 500));
-    this.router.navigate(['user']);
   }
 
   onTorchCompatible(e) {
@@ -50,13 +50,22 @@ export class QrScannerComponent implements OnInit {
     this.cameraReady = false;
   }
 
-  scanSuccessHandler(e) {
+  async scanSuccessHandler(e) {
     this.value = e;
     const data = e.split('www.bayersDigital.com/')[1]
-    if(data && this.prevValue !== data && data.includes('code')){
-      this.prevValue = data;
-      this.service.setQRvalue(data);
-      this.disableScanner(); 
+    if(data && this.prevValue !== data){
+      if(data.includes('code')){
+        this.prevValue = data;
+        this.service.setQRvalue(data);
+      } else {
+        this.service.setQRvalue('N/A');
+      }
+
+      if(this.type === 'user'){
+        await this.disableScanner(); 
+        await new Promise(resolve => setTimeout(resolve, 500));
+        this.router.navigate(['user']);
+      }
     }
   }
 

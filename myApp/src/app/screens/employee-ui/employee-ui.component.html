@@ -1,1 +1,8 @@
-<p>employee-ui works!</p>
+<div class="container">
+    <app-qr-scanner type="employee"></app-qr-scanner>
+    <div class="history">
+        <div *ngFor="let item of codeList">
+            {{item.code}}
+        </div>
+    </div>
+</div>
