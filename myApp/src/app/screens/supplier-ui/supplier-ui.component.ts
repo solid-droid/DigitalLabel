@@ -18,7 +18,7 @@ export class SupplierUIComponent implements OnInit {
     this.subscription1 = this.service.getQRvalue.subscribe(res => {
       if(res && res!=='N/A'){
         if(!this.codeList.find(x => x.code === res)){
-          fetch('http://localhost:3900/update',{
+          fetch(this.service.backend+'/update',{
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'

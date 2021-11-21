@@ -55,7 +55,7 @@ export class MyProductsComponent implements OnInit, OnDestroy {
           if(exist){
             // exist.quantity++;
           } else {
-            fetch('http://localhost:3900/customer',{
+            fetch(this.service.backend+'/customer',{
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'

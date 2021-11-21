@@ -20,7 +20,7 @@ export class EmployeeUIComponent implements OnInit {
       if(res && res!=='N/A'){
         if(!this.codeList.find(x => x.code === res)){
           this.codeList.unshift({code: res});
-          fetch('http://localhost:3900/add',{
+          fetch(this.service.backend+'/add',{
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'

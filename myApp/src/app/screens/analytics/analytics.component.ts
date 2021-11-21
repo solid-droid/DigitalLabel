@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MainServicesService } from 'src/app/services/main-services.service';
 declare const H;
 
 @Component({
@@ -17,7 +18,9 @@ export class AnalyticsComponent implements OnInit {
   markerData = {};
   
 
-  constructor() { }
+  constructor(
+    private service: MainServicesService
+  ) { }
 
   ngOnInit(): void {
     this.platform = new H.service.Platform({
@@ -45,7 +48,7 @@ export class AnalyticsComponent implements OnInit {
   }
 
   async getData(){
-    this.data = (await (await fetch('http://localhost:3900/getAllProduct')).json()).data;
+    this.data = (await (await fetch(this.service.backend+'/getAllProduct')).json()).data;
     this.data.forEach(item => {
       const bayer = {...item.geoLoc, type:0 , time:item.timeStamp, valid:!item.invalidSuplierScan};
       const supplierList = item.supplierScans.map(dat => {

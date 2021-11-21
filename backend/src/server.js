@@ -1,8 +1,12 @@
 const express = require('express')
-const app = express()
-const cors = require('cors')
-const port = 3900
+const serverless = require('serverless-http')
 require('dotenv/config')
+
+
+const app = express()
+const router = express.Router();
+const cors = require('cors')
+
 const mongoose = require('mongoose')
 const schema = require('./schema')
 
@@ -119,26 +123,24 @@ app.use(express.urlencoded({ extended: false }))
 
 //routes
 
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
     res.json({success:true, data: ["hello"]})
   })
 
-app.get('/getAllProduct', getAllProduct)
+router.get('/getAllProduct', getAllProduct)
 
-app.get('/getProductByCode/:code', getProductByCode)
+router.get('/getProductByCode/:code', getProductByCode)
   
-app.post('/add', bayerScanProduct)
+router.post('/add', bayerScanProduct)
 
-app.post('/update', supplierScanProduct)
+router.post('/update', supplierScanProduct)
 
-app.post('/customer', customerScanProduct)
+router.post('/customer', customerScanProduct)
 //mongoDB
-mongoose.connect(process.env.DB_CONNECTION, () => console.log('DB connected'))
+mongoose.connect('mongodb+srv://nikhil:qwerty1234@cluster0.87dy8.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', () => console.log('DB connected'))
 
 //DB Schema
 
+app.use('/.netlify/functions/server',router);
 
-
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
-  })
+module.exports.handler = serverless(app)
