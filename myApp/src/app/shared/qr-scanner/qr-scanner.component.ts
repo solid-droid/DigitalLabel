@@ -52,7 +52,7 @@ export class QrScannerComponent implements OnInit {
 
   async scanSuccessHandler(e) {
     this.value = e;
-    const data = e.split('www.bayersDigital.com/')[1]
+    const data = e.split('solid-droid.github.io/DigitalLabel/')[1]
     if(data && this.prevValue !== data){
       if(data.includes('code')){
         this.prevValue = data;

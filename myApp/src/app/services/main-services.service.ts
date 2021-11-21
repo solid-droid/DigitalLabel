@@ -9,7 +9,7 @@ export class MainServicesService {
 
   lat;
   long;
-  backend = 'http://localhost:9000/.netlify/functions/server';
+  backend = 'https://peaceful-bartik-27a470.netlify.app/.netlify/functions/server';
   private readonly Observable_QRvalue = new BehaviorSubject(undefined);
   getQRvalue = this.Observable_QRvalue.asObservable();
 
