@@ -85,16 +85,16 @@ export class AnalyticsComponent implements OnInit {
 
   addMarker(marker){
     if(marker.type === 0){
-      const icon = new H.map.Icon('../../../assets/logo.svg',{size: {w: 50, h: 50}});
+      const icon = new H.map.Icon('assets/logo.svg',{size: {w: 50, h: 50}});
       const bayer = new H.map.Marker({lat:marker.lat, lng:marker.long},{icon:icon});
       this.map.addObject(bayer);
     } else if (marker.type === 1) {
-      const icon = new H.map.Icon('../../../assets/supplier.png',{size: {w: 50, h: 50}});
+      const icon = new H.map.Icon('assets/supplier.png',{size: {w: 50, h: 50}});
       const supplier = new H.map.Marker({lat:marker.lat, lng:marker.long},{icon:icon});
       this.map.addObject(supplier);
     }
     else if (marker.type === 2) {
-      const icon = new H.map.Icon('../../../assets/customer.png',{size: {w: 50, h: 50}});
+      const icon = new H.map.Icon('assets/customer.png',{size: {w: 50, h: 50}});
       const customer = new H.map.Marker({lat:marker.lat, lng:marker.long},{icon:icon});
       this.map.addObject(customer);
     }

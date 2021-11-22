@@ -10,6 +10,7 @@ import { QrScannerComponent } from './shared/qr-scanner/qr-scanner.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
+  {path: '**', component: MainComponent},
   { path: 'login', component: LoginComponent },
   { path: 'analytics', component: AnalyticsComponent },
   { path: 'employee', component: EmployeeUIComponent },
