@@ -10,13 +10,13 @@ import { QrScannerComponent } from './shared/qr-scanner/qr-scanner.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
-  {path: '**', component: MainComponent},
   { path: 'login', component: LoginComponent },
   { path: 'analytics', component: AnalyticsComponent },
   { path: 'employee', component: EmployeeUIComponent },
   { path: 'supplier', component: SupplierUIComponent },
   { path: 'user', component: UserUIComponent },
-  { path:'scanner',component: QrScannerComponent}
+  { path:'scanner',component: QrScannerComponent},
+  {path: '**', component: MainComponent},
 ];
 
 @NgModule({
